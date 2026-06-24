@@ -1,0 +1,104 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+/* DexLabs AI theme */
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-heading: var(--font-sans);
+  --font-sans: var(--font-geist-sans), 'Geist Fallback';
+  --font-mono: var(--font-geist-mono), 'Geist Mono Fallback';
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-glow: var(--glow);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+}
+
+:root {
+  color-scheme: dark;
+
+  --background: #070014;
+  --foreground: #ede9fe;
+
+  --card: #0e0626;
+  --card-foreground: #ede9fe;
+
+  --popover: #0e0626;
+  --popover-foreground: #ede9fe;
+
+  --primary: #a855f7;
+  --primary-foreground: #0b0118;
+
+  --secondary: #1a0f33;
+  --secondary-foreground: #d8ccff;
+
+  --muted: #150a2b;
+  --muted-foreground: #9a8cc4;
+
+  --accent: #c084fc;
+  --accent-foreground: #0b0118;
+
+  --destructive: #f43f5e;
+
+  --border: rgba(168, 85, 247, 0.16);
+  --input: rgba(168, 85, 247, 0.18);
+  --ring: #a855f7;
+
+  --glow: #a855f7;
+
+  --radius: 0.875rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .glass {
+    background: linear-gradient(
+      160deg,
+      rgba(168, 85, 247, 0.08),
+      rgba(14, 6, 38, 0.4)
+    );
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(168, 85, 247, 0.16);
+  }
+  .glow-purple {
+    box-shadow: 0 0 60px -15px rgba(168, 85, 247, 0.45);
+  }
+}
